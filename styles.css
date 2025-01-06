@@ -1,0 +1,485 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and general layout */
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Light gray background for a clean look */
+}
+
+/* Header (navbar) styling */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, rgba(58, 123, 213, 1), rgba(255, 56, 92, 1)); /* Modern blue-pink gradient */
+    padding: 20px 30px;
+    z-index: 1000;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05); /* Subtle bottom border */
+}
+
+/* Navigation styling */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 30px; /* Slightly more space between links */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 12px 15px;
+    transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    border-radius: 6px;
+}
+
+/* Hover effects for links */
+nav ul li a:hover {
+    color: rgba(255, 235, 59, 1); /* Golden yellow on hover */
+    background-color: rgba(255, 87, 34, 0.1); /* Light orange background on hover */
+    transform: translateY(-4px); /* Slight lift effect */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow */
+}
+
+/* Active link state */
+nav ul li a.active {
+    color: rgba(33, 150, 243, 1); /* Bright blue when active */
+    background-color: rgba(33, 150, 243, 0.1); /* Light blue background */
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Sticky navbar when scrolling */
+header.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth scrolling effect */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Hero Section Styling */
+#home {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(33, 33, 33, 0.8)), url('images/hero-background.jpg') no-repeat center center fixed; /* Subtle image overlay */
+    background-size: cover; /* Ensures the image is properly sized */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+/* Hero Content Styling with staggered animations */
+.hero-content h1 {
+    font-size: 4.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+    margin-bottom: 20px;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.hero-content p {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+    opacity: 0.85;
+    animation: fadeInUp 1.5s ease-out;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Keyframe animation for fadeInUp effect */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Button Styling */
+.cta-btn {
+    padding: 14px 35px;
+    font-size: 1.3rem;
+    background-color: rgba(255, 87, 34, 1); /* Warm orange */
+    color: white;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: rgba(255, 64, 129, 1); /* Pinkish-red on hover */
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(255, 64, 129, 0.5); /* Soft glow effect */
+}
+
+/* About Section Styling */
+#about {
+    background: linear-gradient(135deg, rgba(33, 33, 33, 0.85), rgba(63, 81, 181, 0.85)); /* Gradient background with dark and blue tones */
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+/* Section Title Styling */
+.section-title {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #FFEB3B;  /* Golden yellow */
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #FFEB3B;  /* Golden yellow underline */
+}
+
+/* About Content Layout */
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+/* About Image Styling */
+.about-img {
+    flex: 1;
+    max-width: 280px; /* Slightly smaller max-width for better spacing */
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative; /* To control hover effects and overlays */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Larger, softer shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for effects */
+}
+
+/* Profile Image Styling */
+.profile-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease; /* Smooth scaling for hover */
+}
+
+/* Hover effect for profile image */
+.about-img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow for emphasis */
+}
+
+/* About Content Layout */
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px; /* Spacing from the top */
+    padding: 0 20px; /* Added some padding for responsive behavior */
+}
+
+/* About Text Styling */
+.about-text {
+    flex: 2;
+    max-width: 600px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.85); /* Softer text color for readability */
+}
+
+.about-text h3 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #FFEB3B;  /* Golden yellow */
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Stylish uppercase heading */
+}
+
+.about-text p {
+    opacity: 0.9;
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+/* Adding a nice fade-in effect for the About section */
+@keyframes fadeInSection {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#about {
+    background: linear-gradient(135deg, rgba(33, 33, 33, 0.85), rgba(63, 81, 181, 0.85)); /* Gradient background with dark and blue tones */
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+    animation: fadeInSection 1s ease-out;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-img {
+        margin-bottom: 20px;
+    }
+
+    .about-text {
+        max-width: 90%; /* Allowing the text to be more flexible on small screens */
+    }
+}
+   /* Projects Section Styling */
+.projects-section {
+    background: linear-gradient(135deg, rgba(33, 33, 33, 0.8), rgba(63, 81, 181, 0.8)); /* Gradient background */
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.projects-section .section-title {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #FFEB3B;  /* Golden yellow */
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+.projects-section .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #FFEB3B;  /* Golden yellow underline */
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid layout */
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.project {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.project-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    font-size: 1.2rem;
+    opacity: 0.85;
+    margin-bottom: 15px;
+}
+
+.project-info .project-link {
+    font-size: 1.1rem;
+    color: #FFEB3B;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.project-info .project-link:hover {
+    color: #FF7043; /* Light orange on hover */
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project:hover .project-img {
+    transform: scale(1.1);
+}
+
+.project:hover .project-info {
+    transform: translateY(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Contact Section Styling */
+#contact {
+    padding: 100px 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), rgba(0, 123, 255, 0.7); /* RGBA gradient */
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+/* Overlay to darken background */
+#contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Darker overlay */
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.contact-details {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.contact-details a {
+    text-decoration: none;
+    color: #00aaff;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 35px;
+    color: #fff;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #0a66c2; /* Hover color for LinkedIn */
+    transform: scale(1.1);
+}
+
+.social-icon i {
+    font-size: 35px;
+}
+
+.social-icon i:hover {
+    color: #0a66c2;
+}
+
+
+
+
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
